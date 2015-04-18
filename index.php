@@ -3,6 +3,8 @@
 <head>
 	<title>Kathlyn's To-Do List</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
 </head>
 <body>
   <div class="warp">
@@ -12,7 +14,7 @@
       $mysqli = new sqli('localhost', 'root', 'root', 'todo');
       $query ="SELECT * FROM tasks ORDER BY date ASC, time ASC";
       if($result= $mysqli->query($query)){
-        $numrows = $result->num_rows: // using numrows
+        $numrows = $result->num_rows; // using numrows
         if($numrows>0){
           while($row = $result->fetch_assoc()){
             $task_id $row('id');
